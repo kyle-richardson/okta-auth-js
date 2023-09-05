@@ -113,7 +113,6 @@ describe('base token API', function() {
             headers: {
               'Accept': 'application/json',
               'Content-Type': 'application/x-www-form-urlencoded',
-              'X-Okta-User-Agent-Extended': USER_AGENT
             }
           },
           response: 'pkce-token-success',

@@ -44,9 +44,6 @@ describe('sendRequest', () => {
       idToken: { idToken: 'fake-idToken' },
       accessToken: { accessToken: 'fake-idToken' }
     });
-    auth._oktaUserAgent.getHttpHeader = jest.fn().mockReturnValue({
-      'X-Okta-User-Agent-Extended': 'fake-okta-ua'
-    });
     return auth;
   }
 

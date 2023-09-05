@@ -505,9 +505,6 @@ describe('OktaAuth (api)', function() {
       auth.options.httpRequestClient = jest.fn().mockResolvedValue({
         responseText: null
       });
-      auth._oktaUserAgent.getHttpHeader = jest.fn().mockReturnValue({
-        'X-Okta-User-Agent-Extended': 'fake-okta-ua'
-      });
     });
 
     it('uses accessToken from storage when no accessToken is available from options', async () => {
@@ -531,8 +528,7 @@ describe('OktaAuth (api)', function() {
             Accept: 'application/json',
             Authorization: 'Bearer fake-accessToken-storage',
             'Content-Type': 'application/json',
-            'X-Okta-User-Agent-Extended': 'fake-okta-ua'
-          },
+                      },
           data: {
             fake1: 'fake1',
             fake2: 'fake2',
@@ -564,8 +560,7 @@ describe('OktaAuth (api)', function() {
             Accept: 'application/json',
             Authorization: 'Bearer fake-accessToken-option',
             'Content-Type': 'application/json',
-            'X-Okta-User-Agent-Extended': 'fake-okta-ua'
-          },
+                      },
           data: {
             fake1: 'fake1',
             fake2: 'fake2',
@@ -593,8 +588,7 @@ describe('OktaAuth (api)', function() {
           headers: {
             Accept: 'application/json',
             'Content-Type': 'application/json',
-            'X-Okta-User-Agent-Extended': 'fake-okta-ua'
-          },
+                      },
           data: {
             fake1: 'fake1',
             fake2: 'fake2',

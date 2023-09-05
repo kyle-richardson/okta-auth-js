@@ -27,10 +27,6 @@ export class OktaUserAgent {
     this.environments.push(env);
   }
 
-  getHttpHeader() {
-    return { 'X-Okta-User-Agent-Extended': this.environments.join(' ') };
-  }
-
   getVersion() {
     return SDK_VERSION;
   }
