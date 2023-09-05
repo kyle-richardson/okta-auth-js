@@ -1,8 +1,7 @@
 {
-  "private": true,
   "name": "@glcp/okta-auth-js",
   "description": "The Okta Auth SDK",
-  "version": "7.5.0",
+  "version": "1.0.0",
   "homepage": "https://github.com/okta/okta-auth-js",
   "license": "Apache-2.0",
   "main": "build/cjs/exports/default.js",
