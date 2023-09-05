@@ -47,9 +47,6 @@ describe('HTTP Requestor', () => {
       httpRequestClient,
       tokenManager: { autoRenew: false }
     }, options));
-    jest.spyOn(sdk._oktaUserAgent, 'getHttpHeader').mockImplementation(() => ({
-      'X-Okta-User-Agent-Extended': USER_AGENT
-    }));
   }
   describe('withCredentials', () => {
     it('can be enabled', () => {
@@ -62,7 +59,6 @@ describe('HTTP Requestor', () => {
           headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
-            'X-Okta-User-Agent-Extended': USER_AGENT
           },
           withCredentials: true
         });
@@ -80,7 +76,6 @@ describe('HTTP Requestor', () => {
           headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
-            'X-Okta-User-Agent-Extended': USER_AGENT
           },
           withCredentials: false
         });
@@ -100,7 +95,6 @@ describe('HTTP Requestor', () => {
           headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
-            'X-Okta-User-Agent-Extended': USER_AGENT,
             'fake': 'value'
           },
           withCredentials: false
@@ -122,7 +116,6 @@ describe('HTTP Requestor', () => {
           headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
-            'X-Okta-User-Agent-Extended': USER_AGENT,
             'fake': 'value'
           },
           withCredentials: false
@@ -144,7 +137,6 @@ describe('HTTP Requestor', () => {
           headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
-            'X-Okta-User-Agent-Extended': USER_AGENT
           },
           withCredentials: false
         });
@@ -163,32 +155,11 @@ describe('HTTP Requestor', () => {
           headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
-            'X-Okta-User-Agent-Extended': USER_AGENT,
             'Authorization': 'Bearer fake'
           },
           withCredentials: false
         });
       });
-    });
-    it('calls oktaUserAgent.getHttpHeader to generate okta UA header', () => {
-      createAuthClient();
-      jest.spyOn(sdk._oktaUserAgent, 'getHttpHeader').mockImplementation(() => ({
-        'X-Okta-User-Agent-Extended': 'okta-auth-js/a.b fake/x.y'
-      }));
-      return httpRequest(sdk, { url })
-        .then(res => {
-          expect(res).toBe(response1);
-          expect(sdk._oktaUserAgent.getHttpHeader).toHaveBeenCalledTimes(1);
-          expect(httpRequestClient).toHaveBeenCalledWith(undefined, url, {
-            data: undefined,
-            headers: {
-              'Accept': 'application/json',
-              'Content-Type': 'application/json',
-              'X-Okta-User-Agent-Extended': `okta-auth-js/a.b fake/x.y`
-            },
-            withCredentials: false
-          });
-        });
     });
   });
   describe('cacheResponse', () => {

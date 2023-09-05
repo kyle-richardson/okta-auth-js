@@ -137,11 +137,9 @@ export function httpRequest(sdk: OktaAuthHttpInterface, options: RequestOptions)
     }
   }
 
-  var oktaUserAgentHeader = sdk._oktaUserAgent.getHttpHeader();
   var headers: HeadersInit = {
     'Accept': 'application/json',
     'Content-Type': 'application/json',
-    ...oktaUserAgentHeader
   };
   Object.assign(headers, sdk.options.headers, options.headers);
   headers = removeNils(headers) as HeadersInit;

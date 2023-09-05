@@ -41,7 +41,7 @@ describe('token.getUserInfo', function() {
           headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
-            'X-Okta-User-Agent-Extended': global['USER_AGENT'],
+            
             'Authorization': 'Bearer ' + tokens.standardAccessToken
           }
         },
@@ -66,7 +66,7 @@ describe('token.getUserInfo', function() {
           headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
-            'X-Okta-User-Agent-Extended': global['USER_AGENT'],
+            
             'Authorization': 'Bearer ' + tokens.standardAccessToken
           }
         },
@@ -93,7 +93,7 @@ describe('token.getUserInfo', function() {
           headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
-            'X-Okta-User-Agent-Extended': global['USER_AGENT'],
+            
             'Authorization': 'Bearer ' + tokens.authServerAccessToken
           }
         },
@@ -176,7 +176,7 @@ describe('token.getUserInfo', function() {
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
-          'X-Okta-User-Agent-Extended': global['USER_AGENT'],
+          
           'Authorization': 'Bearer ' + tokens.standardAccessToken
         }
       },
@@ -203,7 +203,7 @@ describe('token.getUserInfo', function() {
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
-          'X-Okta-User-Agent-Extended': global['USER_AGENT'],
+          
           'Authorization': 'Bearer ' + tokens.standardAccessToken
         }
       },

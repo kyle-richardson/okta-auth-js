@@ -21,9 +21,6 @@ describe('Myaccount Profile APIs', () => {
     auth.options.httpRequestClient = jest.fn().mockResolvedValue({
       responseText: '{"fake":"fake-response"}'
     });
-    auth._oktaUserAgent.getHttpHeader = jest.fn().mockReturnValue({
-      'X-Okta-User-Agent-Extended': 'fake-okta-ua'
-    });
     jest.spyOn(auth.tokenManager, 'getTokensSync').mockReturnValue({
       accessToken: { accessToken: 'fake-accessToken-storage' }
     });
@@ -42,8 +39,7 @@ describe('Myaccount Profile APIs', () => {
             Accept: '*/*;okta-version=1.0.0',
             Authorization: 'Bearer fake-accessToken-option',
             'Content-Type': 'application/json',
-            'X-Okta-User-Agent-Extended': 'fake-okta-ua'
-          },
+                      },
           withCredentials: false
         }
       );
@@ -65,8 +61,7 @@ describe('Myaccount Profile APIs', () => {
             Accept: '*/*;okta-version=1.0.0',
             Authorization: 'Bearer fake-accessToken-storage',
             'Content-Type': 'application/json',
-            'X-Okta-User-Agent-Extended': 'fake-okta-ua'
-          },
+                      },
           withCredentials: false
         }
       );
@@ -97,8 +92,7 @@ describe('Myaccount Profile APIs', () => {
             Accept: '*/*;okta-version=1.0.0',
             Authorization: 'Bearer fake-accessToken-option',
             'Content-Type': 'application/json',
-            'X-Okta-User-Agent-Extended': 'fake-okta-ua'
-          },
+                      },
           data: {
             profile: {
               firstName: 'fake'
@@ -131,8 +125,7 @@ describe('Myaccount Profile APIs', () => {
             Accept: '*/*;okta-version=1.0.0',
             Authorization: 'Bearer fake-accessToken-storage',
             'Content-Type': 'application/json',
-            'X-Okta-User-Agent-Extended': 'fake-okta-ua'
-          },
+                      },
           data: {
             profile: {
               firstName: 'fake'
@@ -163,8 +156,7 @@ describe('Myaccount Profile APIs', () => {
             Accept: '*/*;okta-version=1.0.0',
             Authorization: 'Bearer fake-accessToken-option',
             'Content-Type': 'application/json',
-            'X-Okta-User-Agent-Extended': 'fake-okta-ua'
-          },
+                      },
           withCredentials: false
         }
       );
@@ -186,8 +178,7 @@ describe('Myaccount Profile APIs', () => {
             Accept: '*/*;okta-version=1.0.0',
             Authorization: 'Bearer fake-accessToken-storage',
             'Content-Type': 'application/json',
-            'X-Okta-User-Agent-Extended': 'fake-okta-ua'
-          },
+                      },
           withCredentials: false
         }
       );

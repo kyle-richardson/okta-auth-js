@@ -28,9 +28,6 @@ describe('HTTP headers', () => {
         storageManager: {
           getHttpCache: () => {}
         },
-        _oktaUserAgent: {
-          getHttpHeader: () => {}
-        }
       }
     };
   });

@@ -167,7 +167,6 @@ describe('fingerprint', function() {
             headers: {
               'Accept': 'application/json',
               'Content-Type': 'application/json',
-              'X-Okta-User-Agent-Extended': 'okta-auth-js/' + packageJson.version,
               'X-Device-Fingerprint': 'ABCD'
             }
           },
@@ -197,7 +196,6 @@ describe('fingerprint', function() {
             headers: {
               'Accept': 'application/json',
               'Content-Type': 'application/json',
-              'X-Okta-User-Agent-Extended': 'okta-auth-js/' + packageJson.version
             }
           },
           response: 'success'

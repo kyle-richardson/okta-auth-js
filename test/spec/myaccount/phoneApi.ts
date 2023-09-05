@@ -24,9 +24,6 @@ describe('Myaccount Phone APIs', () => {
     auth.options.httpRequestClient = jest.fn().mockResolvedValue({
       responseText: '{"fake":"fake-response"}'
     });
-    auth._oktaUserAgent.getHttpHeader = jest.fn().mockReturnValue({
-      'X-Okta-User-Agent-Extended': 'fake-okta-ua'
-    });
     jest.spyOn(auth.tokenManager, 'getTokensSync').mockReturnValue({
       accessToken: { accessToken: 'fake-accessToken-storage' }
     });
@@ -45,8 +42,7 @@ describe('Myaccount Phone APIs', () => {
             Accept: '*/*;okta-version=1.0.0',
             Authorization: 'Bearer fake-accessToken-option',
             'Content-Type': 'application/json',
-            'X-Okta-User-Agent-Extended': 'fake-okta-ua'
-          },
+                      },
           withCredentials: false
         }
       );
@@ -68,8 +64,7 @@ describe('Myaccount Phone APIs', () => {
             Accept: '*/*;okta-version=1.0.0',
             Authorization: 'Bearer fake-accessToken-storage',
             'Content-Type': 'application/json',
-            'X-Okta-User-Agent-Extended': 'fake-okta-ua'
-          },
+                      },
           withCredentials: false
         }
       );
@@ -96,8 +91,7 @@ describe('Myaccount Phone APIs', () => {
             Accept: '*/*;okta-version=1.0.0',
             Authorization: 'Bearer fake-accessToken-option',
             'Content-Type': 'application/json',
-            'X-Okta-User-Agent-Extended': 'fake-okta-ua'
-          },
+                      },
           withCredentials: false
         }
       );
@@ -119,8 +113,7 @@ describe('Myaccount Phone APIs', () => {
             Accept: '*/*;okta-version=1.0.0',
             Authorization: 'Bearer fake-accessToken-storage',
             'Content-Type': 'application/json',
-            'X-Okta-User-Agent-Extended': 'fake-okta-ua'
-          },
+                      },
           withCredentials: false
         }
       );
@@ -153,8 +146,7 @@ describe('Myaccount Phone APIs', () => {
             Accept: '*/*;okta-version=1.0.0',
             Authorization: 'Bearer fake-accessToken-option',
             'Content-Type': 'application/json',
-            'X-Okta-User-Agent-Extended': 'fake-okta-ua'
-          },
+                      },
           data: {
             profile: {
               phoneNumber: 'fake'
@@ -191,8 +183,7 @@ describe('Myaccount Phone APIs', () => {
             Accept: '*/*;okta-version=1.0.0',
             Authorization: 'Bearer fake-accessToken-storage',
             'Content-Type': 'application/json',
-            'X-Okta-User-Agent-Extended': 'fake-okta-ua'
-          },
+                      },
           data: {
             profile: {
               phoneNumber: 'fake'
@@ -226,8 +217,7 @@ describe('Myaccount Phone APIs', () => {
             Accept: '*/*;okta-version=1.0.0',
             Authorization: 'Bearer fake-accessToken-option',
             'Content-Type': 'application/json',
-            'X-Okta-User-Agent-Extended': 'fake-okta-ua'
-          },
+                      },
           withCredentials: false
         }
       );
@@ -251,8 +241,7 @@ describe('Myaccount Phone APIs', () => {
             Accept: '*/*;okta-version=1.0.0',
             Authorization: 'Bearer fake-accessToken-storage',
             'Content-Type': 'application/json',
-            'X-Okta-User-Agent-Extended': 'fake-okta-ua'
-          },
+                      },
           withCredentials: false
         }
       );
@@ -280,8 +269,7 @@ describe('Myaccount Phone APIs', () => {
             Accept: '*/*;okta-version=1.0.0',
             Authorization: 'Bearer fake-accessToken-option',
             'Content-Type': 'application/json',
-            'X-Okta-User-Agent-Extended': 'fake-okta-ua'
-          },
+                      },
           data: { method: 'SMS' },
           withCredentials: false
         }
@@ -307,8 +295,7 @@ describe('Myaccount Phone APIs', () => {
             Accept: '*/*;okta-version=1.0.0',
             Authorization: 'Bearer fake-accessToken-storage',
             'Content-Type': 'application/json',
-            'X-Okta-User-Agent-Extended': 'fake-okta-ua'
-          },
+                      },
           data: { method: 'SMS' },
           withCredentials: false
         }
@@ -338,8 +325,7 @@ describe('Myaccount Phone APIs', () => {
             Accept: '*/*;okta-version=1.0.0',
             Authorization: 'Bearer fake-accessToken-option',
             'Content-Type': 'application/json',
-            'X-Okta-User-Agent-Extended': 'fake-okta-ua'
-          },
+                      },
           data: { verificationCode: '000000' },
           withCredentials: false
         }
@@ -365,8 +351,7 @@ describe('Myaccount Phone APIs', () => {
             Accept: '*/*;okta-version=1.0.0',
             Authorization: 'Bearer fake-accessToken-storage',
             'Content-Type': 'application/json',
-            'X-Okta-User-Agent-Extended': 'fake-okta-ua'
-          },
+                      },
           data: { verificationCode: '000000' },
           withCredentials: false
         }
